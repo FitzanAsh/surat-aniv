@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary, Sayang!</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .font-dancing {
+            font-family: 'Dancing Script', cursive;
+        }
+        /* Animasi fade-in saat scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Animasi untuk hati */
+        @keyframes float {
+            0% { transform: translateY(0px); opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-1000px); opacity: 0; }
+        }
+        .heart {
+            position: absolute;
+            font-size: 1.5rem; /* Ukuran hati dikecilkan sedikit untuk mobile */
+            color: #ff7b7b;
+            animation: float 10s infinite;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white leading-relaxed">
+
+    <!-- GANTI "link_musik_kamu.mp3" DENGAN URL FILE MUSIK ANDA -->
+    <audio id="background-music" loop>
+        <source src="musik/musik.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+
+    <!-- Container untuk hati yang berjatuhan -->
+    <div id="hearts-container" class="fixed top-0 left-0 w-full h-full pointer-events-none z-0"></div>
+
+    <main class="relative z-10">
+        <!-- Bagian Hero -->
+        <section class="min-h-screen flex flex-col justify-center items-center text-center p-6 bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('image/foto_1.jpg');">
+            <!-- Ganti URL di atas dengan URL foto terbaik kalian -->
+            <h1 class="font-dancing text-5xl sm:text-6xl md:text-8xl text-rose-300 mb-4">Happy Anniversary</h1>
+            
+            <p class="text-xl sm:text-2xl md:text-4xl text-slate-200 mb-2">Sayangku, Windy</p>
+            
+            <p class="text-base sm:text-lg text-slate-300">Sejak 10 Juli 2022</p>
+            
+            <div class="mt-12 animate-bounce">
+                <a href="#our-story" class="text-rose-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Bagian Linimasa Kisah Kita (RESPONSIVE) -->
+        <section id="our-story" class="py-20 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-dancing text-4xl sm:text-5xl text-center text-rose-300 mb-12 fade-in-section">Kisah Kita</h2>
+                
+                <div class="relative">
+                    <!-- Garis tengah: di kiri untuk mobile, di tengah untuk desktop -->
+                    <div class="absolute left-4 md:left-1/2 w-0.5 h-full bg-rose-300/30 transform md:-translate-x-1/2"></div>
+                    
+                    <!-- Momen 1 -->
+                    <div class="mb-8 flex md:justify-end w-full">
+                        <div class="hidden md:block w-5/12"></div>
+                        <div class="absolute left-4 md:left-1/2 z-10 transform -translate-x-1/2">
+                            <div class="flex items-center justify-center w-8 h-8 bg-rose-400 rounded-full shadow-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 p-4 rounded-lg shadow-xl w-full ml-10 md:w-5/12 md:ml-0">
+                            <h3 class="font-bold text-lg text-rose-300">10 Juli 2022</h3>
+                            <p class="text-slate-300 mt-1">Awal dari segalanya. Hari di mana kita resmi memulai perjalanan ini bersama.</p>
+                        </div>
+                    </div>
+
+                    <!-- Momen 2 -->
+                    <div class="mb-8 flex md:justify-start w-full">
+                         <div class="hidden md:block w-5/12"></div>
+                         <div class="absolute left-4 md:left-1/2 z-10 transform -translate-x-1/2">
+                            <div class="flex items-center justify-center w-8 h-8 bg-rose-400 rounded-full shadow-lg">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zM6 10h2v2H6zm0 4h2v2H6zm4-4h8v2h-8zm0 4h8v2h-8z"/></svg>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 p-4 rounded-lg shadow-xl w-full ml-10 md:w-5/12 md:ml-auto">
+                            <h3 class="font-bold text-lg text-rose-300">29 September 2022</h3>
+                            <p class="text-slate-300 mt-1">Nonton bioskop pertama kali, walaupun bareng teman-teman. Momen yang seru!</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Momen 3 -->
+                    <div class="mb-8 flex md:justify-end w-full">
+                        <div class="hidden md:block w-5/12"></div>
+                        <div class="absolute left-4 md:left-1/2 z-10 transform -translate-x-1/2">
+                            <div class="flex items-center justify-center w-8 h-8 bg-rose-400 rounded-full shadow-lg">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 p-4 rounded-lg shadow-xl w-full ml-10 md:w-5/12 md:ml-0">
+                            <h3 class="font-bold text-lg text-rose-300">1 Oktober 2022</h3>
+                            <p class="text-slate-300 mt-1">Perjalanan jauh pertama kita keluar kota, ke Tebing Tinggi & Siantar. Penuh kenangan.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Momen 4 -->
+                    <div class="mb-8 flex md:justify-start w-full">
+                         <div class="hidden md:block w-5/12"></div>
+                         <div class="absolute left-4 md:left-1/2 z-10 transform -translate-x-1/2">
+                            <div class="flex items-center justify-center w-8 h-8 bg-rose-400 rounded-full shadow-lg">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                            </div>
+                        </div>
+                        <div class="bg-slate-800 p-4 rounded-lg shadow-xl w-full ml-10 md:w-5/12 md:ml-auto">
+                            <h3 class="font-bold text-lg text-rose-300">22 Oktober 2022</h3>
+                            <p class="text-slate-300 mt-1">Kita ke Sibolangit, menikmati sejuknya udara di Penatapan. Indah banget.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- Bagian Surat Cinta -->
+        <section class="py-20 px-6 bg-slate-800/50">
+            <div class="max-w-3xl mx-auto text-center fade-in-section">
+                <h2 class="font-dancing text-4xl sm:text-5xl text-rose-300 mb-8">Sebuah Surat Untukmu...</h2>
+                <div class="bg-slate-100/10 p-6 sm:p-8 rounded-lg text-left text-slate-300 shadow-inner">
+                    <p class="mb-4">Hai Sayangku Windy,</p>
+                    <p class="mb-4">Selamat anniversary, sayang. Rasanya baru kemarin kita bertemu, tapi sekarang aku tidak bisa membayangkan hidupku tanpa ayank. Setiap hari bersama ayank adalah anugerah. Sayank membawa begitu banyak tawa, kebahagiaan, dan kedamaian dalam hidupku.</p>
+                    <p class="mb-4">Terima kasih sudah menjadi partner terbaik dalam segala hal. Terima kasih sudah sabar menghadapi semua kurangku. Aku sangat bersyukur memilikimu.</p>
+                    <p>Aku harap kita bisa terus bersama, melewati banyak tahun-tahun berikutnya, membangun lebih banyak kenangan indah. Aku sayang ayank, lebih dari yang bisa diungkapkan kata-kata.</p>
+                    <p class="mt-6">Dengan segenap cinta,</p>
+                    <p class="font-dancing text-2xl mt-2 text-rose-300">Fitzan Ashari</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Galeri Foto -->
+        <section class="py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="font-dancing text-4xl sm:text-5xl text-center text-rose-300 mb-12 fade-in-section">Galeri Kenangan</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-4">
+                    <!-- GANTI DENGAN FOTO-FOTO KALIAN (10 FOTO) -->
+                    <div class="fade-in-section">
+                        <img src="image/foto_2.jpg" alt="Kenangan 1" class="rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="fade-in-section" style="transition-delay: 100ms;">
+                        <img src="image/foto_3.jpg" alt="Kenangan 2" class="rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="fade-in-section" style="transition-delay: 200ms;">
+                        <img src="image/foto_4.jpg" alt="Kenangan 3" class="rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="fade-in-section" style="transition-delay: 300ms;">
+                        <img src="image/foto_5.jpg" alt="Kenangan 4" class="rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="showImageModal(this.src)">
+                    </div>
+                     <div class="fade-in-section" style="transition-delay: 400ms;">
+                        <img src="image/foto_10.jpg" alt="Kenangan 5" class="rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="fade-in-section" style="transition-delay: 500ms;">
+                        <img src="image/foto_7.jpg" alt="Kenangan 6" class="rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="fade-in-section" style="transition-delay: 600ms;">
+                        <img src="image/foto_1.jpg" alt="Kenangan 7" class="rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="fade-in-section" style="transition-delay: 700ms;">
+                        <img src="image/foto_8.jpg" alt="Kenangan 8" class="rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="fade-in-section" style="transition-delay: 800ms;">
+                        <img src="image/foto_9.jpg" alt="Kenangan 9" class="rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="showImageModal(this.src)">
+                    </div>
+                    <div class="fade-in-section" style="transition-delay: 900ms;">
+                        <img src="image/foto_6.jpg" alt="Kenangan 10" class="rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300" onclick="showImageModal(this.src)">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="text-center py-10">
+            <p class="text-slate-400">Dibuat dengan ❤️ untuk orang yang paling spesial.</p>
+            <p class="font-dancing text-2xl text-rose-300 mt-2">I Love You to the Moon and Back</p>
+        </footer>
+    </main>
+
+    <!-- Modal untuk menampilkan gambar -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-80 flex justify-center items-center z-50 hidden" onclick="closeImageModal()">
+        <img id="modalImage" src="" alt="Kenangan diperbesar" class="max-w-[90%] max-h-[90%] object-contain rounded-lg">
+        <button class="absolute top-4 right-4 text-white text-4xl">&times;</button>
+    </div>
+
+    <script>
+        // --- SCRIPT MUSIK ---
+        const music = document.getElementById('background-music');
+        // Fungsi untuk memainkan musik dan menghapus listener
+        function playMusic() {
+            music.play().catch(error => {
+                // Menangani error jika browser memblokir pemutaran
+                console.log("Pemutaran musik diblokir oleh browser:", error);
+            });
+            // Hapus event listener setelah diklik pertama kali
+            document.body.removeEventListener('click', playMusic);
+        }
+        // Tambahkan event listener untuk klik pertama
+        document.body.addEventListener('click', playMusic);
+
+
+        // --- SCRIPT LAINNYA ---
+        // Script untuk animasi fade-in saat scroll
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Script untuk modal galeri foto
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+
+        function showImageModal(src) {
+            modalImage.src = src;
+            imageModal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Mencegah scroll di background
+        }
+
+        function closeImageModal() {
+            imageModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Script untuk membuat hati berjatuhan
+        const heartsContainer = document.getElementById('hearts-container');
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 5 + 5 + 's'; // durasi antara 5-10 detik
+            heart.innerHTML = '❤️';
+            heartsContainer.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000); // Hapus hati setelah 10 detik
+        }
+
+        setInterval(createHeart, 500); // Buat hati baru setiap 500ms
+    </script>
+
+</body>
+</html>
